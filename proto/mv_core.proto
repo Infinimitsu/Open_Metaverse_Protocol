@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package mv_core;
+
+// --- MATHEMATICAL PRIMITIVES ---
+
+// Standard 3D Vector (Y-Up)
+message Vector3 {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+// Quaternion for Rotation (prevents Gimbal Lock)
+message Quaternion {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float w = 4;
+}
+
+// --- SPATIAL INDEXING ---
+
+// The "Address" of any location in the Metaverse
+message GridAddress {
+  // The Sector-Block-Parcel hierarchy (matches Quadtree depth)
+  int32 sector_id = 1;  // Top level (10km)
+  int32 block_id = 2;   // Mid level (1km)
+  int32 parcel_id = 3;  // Leaf level (Variable)
+  
+  // The Morton Code (Z-Order Curve) for database lookups
+  // 64-bit integer spatial hash
+  uint64 spatial_hash = 4;
+}
+
+// --- ENTITY IDENTITY ---
+
+// Universal Entity ID
+message EntityID {
+  // UUID string (128-bit)
+  string uuid = 1;
+  
+  // Type of entity (Player, Bot, Static Object)
+  enum EntityType {
+    UNKNOWN = 0;
+    PLAYER_AVATAR = 1;
+    AI_AGENT = 2;
+    STATIC_OBJECT = 3;
+    PHYSICS_PROP = 4;
+  }
+  EntityType type = 2;
+}

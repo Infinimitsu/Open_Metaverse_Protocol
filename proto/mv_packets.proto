@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package mv_packets;
+
+import "mv_core.proto";
+
+// The Top-Level Container for all network traffic
+message Packet {
+  // Header information
+  uint64 timestamp = 1; // Unix timestamp (ms)
+  uint32 sequence_id = 2; // For packet loss detection
+  
+  // The Payload (One of these fields will be set)
+  oneof payload {
+    HandshakeRequest handshake_req = 3;
+    HandshakeResponse handshake_res = 4;
+    TelemetryUpdate telemetry = 5;
+    GridSubscription grid_sub = 6;
+    AssetManifest asset_manifest = 7;
+    HandoffRequest handoff_req = 8;
+  }
+}
+
+// --- CONNECTION HANDSHAKE ---
+
+message HandshakeRequest {
+  uint32 protocol_version = 1;
+  mv_core.EntityID client_id = 2;
+  string auth_token = 3; // OAUTH / Crypto signature
+  
+  // Client capabilities
+  bool supports_p2p_voice = 4;
+  string render_engine = 5; // e.g., "Unreal 5.3", "WebGPU-Custom"
+}
+
+message HandshakeResponse {
+  bool accepted = 1;
+  string rejection_reason = 2;
+  
+  // Server Configuration
+  float tick_rate = 3; // e.g., 20Hz, 60Hz
+  mv_core.GridAddress current_grid_location = 4;
+}
+
+// --- SPATIAL SYNC (The "Firehose") ---
+// Sent over QUIC Datagram (Unreliable)
+
+message TelemetryUpdate {
+  mv_core.EntityID entity_id = 1;
+  
+  // State flags (bitmask for optimization)
+  // 1 = Position Valid, 2 = Rotation Valid, 4 = Velocity Valid
+  uint32 flags = 2;
+  
+  // Physics State (Dead Reckoning)
+  mv_core.Vector3 position = 3;
+  mv_core.Vector3 velocity = 4; // Crucial for interpolation
+  mv_core.Quaternion rotation = 5;
+  mv_core.Vector3 angular_velocity = 6;
+  
+  // Animation State
+  // Integers mapped to a standard "Animation Enum" (Walk, Run, Fly)
+  // Actual bone data is sent via separate P2P channel if close
+  int32 anim_state_id = 7; 
+}
+
+// --- GRID MANAGEMENT ---
+
+message GridSubscription {
+  // "I am entering this cell, send me updates"
+  mv_core.GridAddress center_cell = 1;
+  
+  // "I am leaving these cells, stop sending updates"
+  repeated mv_core.GridAddress unsubscribe_cells = 2;
+  
+  // "I am entering these cells"
+  repeated mv_core.GridAddress subscribe_cells = 3;
+}

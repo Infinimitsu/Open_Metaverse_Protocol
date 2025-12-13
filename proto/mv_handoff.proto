@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package mv_handoff;
+
+import "mv_core.proto";
+
+// Client asks: "Can I come in?"
+message HandoffRequest {
+  mv_core.EntityID user_id = 1;
+  mv_core.GridAddress target_parcel = 2;
+  
+  // What the client is willing to accept
+  bool accept_visual_override = 3; // "Can you change my skybox?"
+  bool accept_physics_override = 4; // "Can you change gravity?"
+  bool accept_script_blocking = 5; // "Can you disable my bots?"
+}
+
+// Server says: "Yes, but here are the rules."
+message HandoffResponse {
+  bool approved = 1;
+  string rejection_reason = 2;
+  
+  // The New World State (Holodeck Parameters)
+  WorldStateOverride overrides = 3;
+  
+  // The Server's Asset Manifest (What to download)
+  string asset_bundle_url = 4;
+  string scene_description_usd = 5; // OpenUSD entry point
+}
+
+message WorldStateOverride {
+  // Visuals
+  bool force_camera_perspective = 1; // e.g. First Person Only
+  string global_shader_uri = 2; // MaterialX override for the world
+  
+  // Physics
+  float gravity_multiplier = 3; // 1.0 = Earth, 0.0 = Space
+  bool allow_flight = 4;
+  float max_speed = 5;
+  
+  // Restrictions
+  bool block_p2p_voice = 6; // Force server-relayed voice only?
+}

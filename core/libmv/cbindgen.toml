@@ -1,0 +1,10 @@
+language = "C++"
+# Wrap everything in this namespace
+namespace = "mv_core"
+# Add a header guard
+include_guard = "LIBMV_GENERATED_H"
+# Standard C formatting
+style = "type"
+# Ensure we parse the crate fully
+parse.parse_deps = true
+parse.include = ["libmv"]

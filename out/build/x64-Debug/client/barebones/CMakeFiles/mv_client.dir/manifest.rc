@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/client/barebones/CMakeFiles/mv_client.dir/embed.manifest"

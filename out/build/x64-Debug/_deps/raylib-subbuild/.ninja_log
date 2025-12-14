@@ -1,0 +1,21 @@
+# ninja log v6
+3	41	7873954703097369	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	695281928d80dce4
+3	41	7873954703097369	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	695281928d80dce4
+9017	9057	7873954793242428	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	a34b33d4bab5b889
+8860	8897	7873954791645158	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	e68c71864d6297fe
+42	8819	7873954790869891	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	2af209d4e4a7fb09
+42	8819	7873954790869891	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	2af209d4e4a7fb09
+8820	8860	7873954791280643	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	6266dbfa5ab16dc4
+8820	8860	7873954791280643	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	6266dbfa5ab16dc4
+8860	8897	7873954791645158	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	e68c71864d6297fe
+8897	8936	7873954792036820	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	ab277017f0fa7694
+8897	8936	7873954792036820	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	ab277017f0fa7694
+8936	8975	7873954792428543	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	e4cbe7831a179cda
+8936	8975	7873954792428543	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	e4cbe7831a179cda
+8976	9017	7873954792831702	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	f96fdc6c36cac4d9
+8976	9017	7873954792831702	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	f96fdc6c36cac4d9
+9017	9057	7873954793242428	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	a34b33d4bab5b889
+9057	9110	7873954793776558	CMakeFiles/raylib-populate-complete	a9355d421127a6ed
+9057	9110	7873954793776558	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	a9355d421127a6ed
+9057	9110	7873954793776558	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate-complete	a9355d421127a6ed
+9057	9110	7873954793776558	C:/Users/infin/Documents/GitHub/Open_Metaverse_Protocol/out/build/x64-Debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	a9355d421127a6ed

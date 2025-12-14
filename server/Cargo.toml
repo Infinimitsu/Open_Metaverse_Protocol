@@ -1,0 +1,11 @@
+[package]
+name = "mv_server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+quinn = "0.10"
+rustls = "0.21"
+rcgen = "0.11" # To generate self-signed certs automatically
+anyhow = "1.0"

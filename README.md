@@ -24,7 +24,7 @@ We have successfully released the first working prototype of the protocol stack.
 
 ## **🎮 How to Run the Demo**
 
-You can download the latest release from the \[suspicious link removed\].
+You can download the latest release from the [Releases Page](https://github.com/Infinimitsu/Open_Metaverse_Protocol/releases).
 
 ### **1\. Start the Server**
 

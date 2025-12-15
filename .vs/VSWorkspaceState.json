@@ -6,8 +6,15 @@
     ]
   },
   "ExpandedNodes": [
-    ""
+    "",
+    "\\client",
+    "\\client\\barebones",
+    "\\core",
+    "\\core\\libmv",
+    "\\core\\libmv\\src",
+    "\\server",
+    "\\server\\src"
   ],
-  "SelectedNode": "\\CMakeLists.txt",
+  "SelectedNode": "\\core\\libmv\\src\\spatial.rs",
   "PreviewInSolutionExplorer": false
 }
